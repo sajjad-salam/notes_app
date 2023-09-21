@@ -63,6 +63,25 @@ class _NotesPageState extends State<NotesPage> {
         : [];
   }
 
+  void deleteNote(int index) {
+    setState(() {
+      Note deletedNote = notes.removeAt(index);
+      deleteNoteFromStorage(
+          deletedNote); // Call a function to delete the note from storage
+    });
+  }
+
+  void deleteNoteFromStorage(Note note) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String>? storedNotes = prefs.getStringList('notes');
+
+    if (storedNotes != null) {
+      String noteJson = noteToJson(note);
+      storedNotes.remove(noteJson);
+      await prefs.setStringList('notes', storedNotes);
+    }
+  }
+
   Future<void> saveNotes(List<Note> notes) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> notesJson = notes.map((note) => noteToJson(note)).toList();
@@ -121,7 +140,7 @@ class _NotesPageState extends State<NotesPage> {
                       icon: Icon(Icons.delete),
                       onPressed: () {
                         setState(() {
-                          notes.removeAt(index);
+                          deleteNote(index);
                         });
                       },
                     ),
@@ -135,9 +154,12 @@ class _NotesPageState extends State<NotesPage> {
                 // color: CupertinoColors.extraLightBackgroundGray,
                 borderRadius: BorderRadius.circular(10),
               ),
-              onChanged: (value) => setState(() {}),
+              controller: noteController,
               autocorrect: true,
-              textInputAction: TextInputAction.next,
+              textInputAction: TextInputAction.done,
+              onSubmitted: (value) {
+                addNote();
+              },
               placeholder: ".... كتابة ملاحظة ",
               // maxLength: 10,
               textAlign: TextAlign.end,

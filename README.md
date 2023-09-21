@@ -1,22 +1,16 @@
 # notes
 
-A new Flutter project.
+A new Flutter project notes app .
 
 ## Getting Started
 
 
 
 ## Download app for android 
-[Download](https://docs.flutter.dev/get-started/codelab)
+[![Download Folder](https://img.shields.io/badge/Download-App-blue.svg)](https://github.com/sajjad-salam/notes_app/blob/main/out/app-release.apk)
 
  
-This project is a starting point for a Flutter application.
+<img src="/assets/image/screen1.png" alt="">
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<video src="assets/image/record.mp4"></video>

@@ -165,6 +165,7 @@ class _NotesPageState extends State<NotesPage> {
               textAlign: TextAlign.end,
               style: const TextStyle(
                 fontFamily: "myfont",
+                color: Colors.white, // Set the color to white
               ),
             ),
             const SizedBox(height: 10),

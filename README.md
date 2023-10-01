@@ -7,7 +7,7 @@ A new Flutter project notes app .
 
 
 ## Download app for android 
-[![Download Folder](https://raw.githubusercontent.com/sajjad-salam/notes_app/main/out/app-release.apk)
+[Download app](https://raw.githubusercontent.com/sajjad-salam/notes_app/main/out/app-release.apk)
 
  
 <img src="/assets/image/screen1.png" alt="">
